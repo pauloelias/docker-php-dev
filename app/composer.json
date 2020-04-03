@@ -1,0 +1,15 @@
+{
+  "name": "pauloelias/docker-php-dev",
+  "description": "Local Docker PHP Development Environment.",
+  "require": {},
+  "require-dev": {},
+  "autoload": {},
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
+  },
+  "scripts": {}
+}

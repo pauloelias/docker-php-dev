@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: .
+      args:
+        NGINX_IMAGE: ${NGINX_IMAGE}
+      dockerfile: ./docker-config/nginx/Dockerfile
+    image: ${COMPOSE_PROJECT_NAME}-nginx
+    env_file: &env
+      - ./app/.env
+    links:
+      - php
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app/public:/var/www/app/public:consistent
+  php:
+    container_name: ${COMPOSE_PROJECT_NAME}-php
+    build:
+      context: .
+      args:
+        PHP_IMAGE: ${PHP_IMAGE}
+      dockerfile: ./docker-config/php/Dockerfile
+    image: ${COMPOSE_PROJECT_NAME}-php
+    depends_on:
+      - "postgres"
+      - "redis"
+    env_file:
+      *env
+    expose:
+      - "9000"
+    links:
+      - postgres
+      - redis
+    volumes:
+      - ./app:/var/www/app:cached
+      - ./app/vendor:/var/www/app/vendor:delegated
+  postgres:
+    container_name: ${COMPOSE_PROJECT_NAME}-postgres
+    image: ${POSTGRES_IMAGE}
+    env_file:
+      *env
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data:delegated
+  redis:
+    container_name: ${COMPOSE_PROJECT_NAME}-redis
+    image: ${REDIS_IMAGE}
+    expose:
+      - "6379"
+    volumes:
+      - ./data/redis:/data:delegated
+  adminer:
+    container_name: ${COMPOSE_PROJECT_NAME}-adminer
+    image: ${ADMINER_IMAGE}
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - "postgres"

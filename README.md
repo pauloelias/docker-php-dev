@@ -1,2 +1,3 @@
-# docker-php-dev
+# Docker PHP Dev
+
 Local Docker LEMP development stack.
