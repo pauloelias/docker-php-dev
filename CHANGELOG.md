@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 - 2020-04-03
+
+### Fixed
+
+- Fix version number
+
 ## 1.0.2 - 2020-04-03
 
 ### Fixed
