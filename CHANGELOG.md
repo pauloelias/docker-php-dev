@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 - 2020-04-03
+
+### Fixed
+
+- Fix malformed `composer.json`
+
 ## 1.0.0 - 2020-04-03
 
 ### Changed
