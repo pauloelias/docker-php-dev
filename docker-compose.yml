@@ -15,7 +15,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./app/public:/var/www/app/public:consistent
+      - ./app/public:/var/www/app/web:consistent
   php:
     container_name: ${COMPOSE_PROJECT_NAME}-php
     build:
