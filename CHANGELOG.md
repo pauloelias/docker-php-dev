@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.1.0 - 2020-04-04
+
+### Added
+
+- MariaDB support
+- Named volumes for Postgres, MariaDB and Redis
+
+### Changed
+
+- Renamed `app` to `src`
+- Renamed LICENSE to LICENSE.md
+- Postgres database user credentials
+
+## Removed
+
+- Local `data` directory
+
 ## 1.0.3 - 2020-04-03
 
 ### Fixed

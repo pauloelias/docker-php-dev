@@ -9,13 +9,13 @@ services:
       dockerfile: ./docker-config/nginx/Dockerfile
     image: ${COMPOSE_PROJECT_NAME}-nginx
     env_file: &env
-      - ./app/.env
+      - src/.env
     links:
       - php
     ports:
       - "8000:80"
     volumes:
-      - ./app/web:/var/www/app/web:consistent
+      - ./src/web:/var/www/src/web:consistent
   php:
     container_name: ${COMPOSE_PROJECT_NAME}-php
     build:
@@ -26,6 +26,7 @@ services:
     image: ${COMPOSE_PROJECT_NAME}-php
     depends_on:
       - "postgres"
+      - "mariadb"
       - "redis"
     env_file:
       *env
@@ -33,31 +34,47 @@ services:
       - "9000"
     links:
       - postgres
+      - mariadb
       - redis
     volumes:
-      - ./app:/var/www/app:cached
-      - ./app/vendor:/var/www/app/vendor:delegated
+      - ./src:/var/www/src:cached
+      - ./src/vendor:/var/www/src/vendor:delegated
   postgres:
     container_name: ${COMPOSE_PROJECT_NAME}-postgres
     image: ${POSTGRES_IMAGE}
     env_file:
       *env
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: letmein
       POSTGRES_DB: app
     ports:
       - 5432:5432
     restart: always
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data:delegated
+      - pgsql-data:/var/lib/postgresql/data
+  mariadb:
+    container_name: ${COMPOSE_PROJECT_NAME}-mariadb
+    image: ${MARIADB_IMAGE}
+    env_file:
+      *env
+    environment:
+      MYSQL_ROOT_PASSWORD: letmein
+      MYSQL_USER: app
+      MYSQL_PASSWORD: letmein
+      MYSQL_DATABASE: app
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql
   redis:
     container_name: ${COMPOSE_PROJECT_NAME}-redis
     image: ${REDIS_IMAGE}
     expose:
       - "6379"
     volumes:
-      - ./data/redis:/data:delegated
+      - redis-data:/data
   adminer:
     container_name: ${COMPOSE_PROJECT_NAME}-adminer
     image: ${ADMINER_IMAGE}
@@ -66,3 +83,9 @@ services:
     restart: always
     depends_on:
       - "postgres"
+      - "mariadb"
+
+volumes:
+  mysql-data:
+  pgsql-data:
+  redis-data:

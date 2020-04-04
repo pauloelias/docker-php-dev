@@ -1,7 +1,7 @@
 {
   "name": "pauloelias/docker-php-dev",
   "description": "Local Docker PHP Development Environment.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "keywords": [
     "php",
     "docker",
@@ -13,7 +13,7 @@
   "homepage": "https://github.com/pauloelias/docker-php-dev",
   "type": "project",
   "support": {
-    "email": "git@paulo.dev",
+    "email": "paulo@pauloelias.com",
     "issues": "https://github.com/pauloelias/docker-php-dev/issues",
     "source": "https://github.com/pauloelias/docker-php-dev",
     "docs": "https://github.com/pauloelias/docker-php-dev/blob/master/README.md"
@@ -31,10 +31,10 @@
   "scripts": {
     "post-create-project-cmd": [
       "@php -r \"copy('./.env.example', './.env');\"",
-      "@php -r \"copy('./app/.env.example', './app/.env');\"",
+      "@php -r \"copy('./src/.env.example', './src/.env');\"",
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"unlink('composer.lock');\"",
-      "@php -r \"unlink('LICENSE');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"unlink('CHANGELOG.md');\""
     ]
