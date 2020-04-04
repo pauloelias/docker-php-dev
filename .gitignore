@@ -1,4 +1,69 @@
-# Craft 2 Storage (https://craftcms.com/support/craft-storage-gitignore)
-# not necessary for Craft 3 (https://github.com/craftcms/craft/issues/26)
-/craft/storage/*
-!/craft/storage/rebrand
+# ENVIRONMENT
+*.env
+.env*
+codecept.phar
+composer.phar
+
+# COMPOSER
+*/vendor/*
+
+# BUILD FILES
+node_modules
+npm-debug.log
+yarn-error.log
+
+# MISC FILES
+.AppleDouble
+.cache
+.DS_Store
+.LSOverride
+.project
+.settings
+._*
+*.tmproj
+*.tmproject
+config.codekit3
+error_log
+prepros-6.config
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# KEYS
+*/.keys/*
+
+# EDITORS
+*.esproj
+.idea
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# KEEP
+!.env.example
+!.gitignore
+!.gitkeep
+
+
+
+
+
+
