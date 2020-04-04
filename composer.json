@@ -1,7 +1,7 @@
 {
   "name": "pauloelias/docker-php-dev",
   "description": "Local Docker PHP Development Environment.",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "keywords": [
     "php",
     "docker",
