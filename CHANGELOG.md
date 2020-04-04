@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0.1 - 2020-04-04
+
+### Fixed
+
+- Renamed LICENSE to LICENSE.md
+
 ## 1.1.0 - 2020-04-04
 
 ### Added
