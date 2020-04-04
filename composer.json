@@ -1,7 +1,7 @@
 {
   "name": "pauloelias/docker-php-dev",
   "description": "Local Docker PHP Development Environment.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "php",
     "docker",
@@ -16,7 +16,7 @@
     "email": "git@paulo.dev",
     "issues": "https://github.com/pauloelias/docker-php-dev/issues",
     "source": "https://github.com/pauloelias/docker-php-dev",
-    "docs": "https://github.com/pauloelias/docker-php-dev/blob/master/README.md",
+    "docs": "https://github.com/pauloelias/docker-php-dev/blob/master/README.md"
   },
   "require": {},
   "require-dev": {},
