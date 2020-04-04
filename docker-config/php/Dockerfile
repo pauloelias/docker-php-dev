@@ -51,6 +51,7 @@ RUN apt-get update \
         mbstring \
         opcache \
         pdo \
+        pdo_mysql \
         pdo_pgsql \
         shmop \
         sockets \
@@ -86,9 +87,9 @@ COPY ./docker-config/php/zzz-docker.conf /usr/local/etc/php-fpm.d/zzz-docker.con
 WORKDIR /var/www
 
 # Copy over the directories/files php needs access to
-COPY --chown=www-data:www-data ./app/composer.* /var/www/app/
+COPY --chown=www-data:www-data ./src/composer.* /var/www/src/
 
-WORKDIR /var/www/app
+WORKDIR /var/www/src
 
 # Do a `composer install` without running any Composer scripts
 # - If `composer.lock` is present, it will install what is in the lock file
@@ -103,6 +104,6 @@ CMD if [ ! -f "./composer.lock" ]; then \
         composer install --no-scripts --optimize-autoloader --no-interaction; \
     fi \
     && \
-    chown -R www-data:www-data /var/www/app/vendor \
+    chown -R www-data:www-data /var/www/src/vendor \
     && \
     php-fpm
