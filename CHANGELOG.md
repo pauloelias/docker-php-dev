@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.0 - 2020-04-03
+
+### Changed
+
+- Bump version for public release
+
 ## 0.0.3 - 2020-04-02
 
 ### Added
