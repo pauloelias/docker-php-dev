@@ -1,7 +1,7 @@
 {
   "name": "pauloelias/docker-php-dev",
   "description": "Local Docker PHP Development Environment.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "keywords": [
     "php",
     "docker",
@@ -34,7 +34,7 @@
       "@php -r \"copy('./app/.env.example', './app/.env');\"",
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"unlink('composer.lock');\"",
-      "@php -r \"unlink('LICENSE');\"",
+      "@php -r \"unlink('LICENSE.md');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"unlink('CHANGELOG.md');\""
     ]
