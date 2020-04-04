@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2020-04-03
+
+### Fixed
+
+- Fix path to LICENSE file in `post-create-project-cmd`
+
 ## 1.0.1 - 2020-04-03
 
 ### Fixed
