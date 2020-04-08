@@ -6,8 +6,8 @@ services:
       context: .
       args:
         NGINX_IMAGE: ${NGINX_IMAGE}
-      dockerfile: ./docker-config/nginx/Dockerfile
-    image: ${COMPOSE_PROJECT_NAME}-nginx
+      dockerfile: ./docker-config/nginx-base/Dockerfile
+    image: '${COMPOSE_PROJECT_NAME}-nginx'
     env_file: &env
       - src/.env
     links:
@@ -23,7 +23,7 @@ services:
       args:
         PHP_IMAGE: ${PHP_IMAGE}
       dockerfile: ./docker-config/php/Dockerfile
-    image: ${COMPOSE_PROJECT_NAME}-php
+    image: '${COMPOSE_PROJECT_NAME}-php'
     depends_on:
       - "postgres"
       - "mariadb"
