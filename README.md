@@ -1,10 +1,11 @@
-# Docker PHP Develeopment Environment
+# LocalApp.dev Docker LEMP Stack
 
-## About pauloelias/docker-php-dev
+## About
 
-Simple local Docker LEMP stack for developing PHP projects.
+Local Docker LEMP stack for developing secure PHP apps.
 
 - Docker
+- SSL/HTTPS
 - PHP 7.4
 - Nginx 1.16
 - Postgres 12

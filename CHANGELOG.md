@@ -1,4 +1,10 @@
-# Changelog
+# LocalApp.dev Changelog
+
+## 1.2.0 - 2020-04-07
+
+### Added
+
+- SSL SSL Support
 
 ## 1.1.0.1 - 2020-04-04
 

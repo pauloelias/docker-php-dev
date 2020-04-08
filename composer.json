@@ -1,22 +1,26 @@
 {
-  "name": "pauloelias/docker-php-dev",
-  "description": "Local Docker PHP Development Environment.",
-  "version": "1.1.0.1",
+  "name": "pauloelias/localappdev",
+  "description": "Local Docker LEMP stack for developing secure PHP apps",
+  "version": "1.2.0",
   "keywords": [
-    "php",
     "docker",
+    "php",
+    "postgres",
+    "mariadb",
+    "ssl",
+    "https",
     "project",
     "boilerplate",
     "scaffold"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/pauloelias/docker-php-dev",
+  "homepage": "https://github.com/pauloelias/localappdev",
   "type": "project",
   "support": {
     "email": "paulo@pauloelias.com",
-    "issues": "https://github.com/pauloelias/docker-php-dev/issues",
-    "source": "https://github.com/pauloelias/docker-php-dev",
-    "docs": "https://github.com/pauloelias/docker-php-dev/blob/master/README.md"
+    "issues": "https://github.com/pauloelias/localappdev/issues",
+    "source": "https://github.com/pauloelias/localappdev",
+    "docs": "https://github.com/pauloelias/localappdev/blob/master/README.md"
   },
   "require": {},
   "require-dev": {},
